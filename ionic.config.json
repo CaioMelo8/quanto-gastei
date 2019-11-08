@@ -1,0 +1,7 @@
+{
+  "name": "Quanto Gastei",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
