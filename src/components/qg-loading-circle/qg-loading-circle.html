@@ -1,0 +1,11 @@
+<div class="loading-circle-wrapper">
+  <div class="loading-circle">
+    <div class="loading-circle-inner"></div>
+  </div>
+  <div class="loading-text" #container>
+    <div class="loading-label">{{ label | uppercase }}</div>
+    <div [fittext]="true" [minFontSize]="20" [maxFontSize]="26" text-center>
+      {{ value | expenseValue:'BRL' }}
+    </div>
+  </div>
+</div>

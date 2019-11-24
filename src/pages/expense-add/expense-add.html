@@ -1,0 +1,39 @@
+<ion-header>
+  <qg-navbar title="Adicionar Despesa"></qg-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (submit)="onSubmitExpense()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item no-padding no-lines>
+            <ion-label start floating>Título</ion-label>
+            <ion-input type="text" formControlName="title"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item no-padding no-lines>
+            <ion-label start floating>Valor</ion-label>
+            <ion-input type="number" formControlName="value"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item no-padding no-lines>
+            <ion-label start floating>Data</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" formControlName="date"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button type="submit" full>Confirmar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

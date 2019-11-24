@@ -1,14 +1,17 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+  <qg-navbar title="Quanto Gastei?" hideBackButton="true"></qg-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <qg-loading-circle label="MÊS ATUAL" [value]="monthlyTotal"></qg-loading-circle>
+  <ion-list no-padding>
+    <ion-list-header no-padding no-margin no-lines>ÚLTIMOS GASTOS</ion-list-header>
+    <button *ngFor="let expense of expenses" (click)="goToDetailPage()" ion-item detail-push no-padding>
+      <ion-label>{{ expense.title }} - {{ expense.value | currency:'BRL' }}</ion-label>
+    </button>
+  </ion-list>
+  <button ion-button clear full icon-start (click)="goToExpenseAddPage()">
+    <ion-icon name="add"></ion-icon>
+    Quick add
+  </button>
 </ion-content>
